@@ -2,6 +2,7 @@ package com.technogise.codingtest.chess.model.piece;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -12,12 +13,19 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import com.technogise.codingtest.chess.exception.ChessException;
 import com.technogise.codingtest.chess.model.board.Position;
+import com.technogise.codingtest.chess.move.straight.StraightMove;
 
 @SpringBootTest
 class RookTest {
 
 	@Autowired
 	Rook rook;
+
+	@Test
+	public void testGetMoves() {
+		List<StraightMove> moves = rook.getMoves();
+		assertEquals(4, moves.size());
+	}
 
 	@Test
 	void testPossibleMoves() throws ChessException {

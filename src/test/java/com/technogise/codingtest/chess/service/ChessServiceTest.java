@@ -12,7 +12,7 @@ import org.springframework.util.StringUtils;
 import com.technogise.codingtest.chess.exception.ChessException;
 
 @SpringBootTest
-class ChessServiceImplTest {
+class ChessServiceTest {
 
 	@Autowired
 	ChessService chessService;
